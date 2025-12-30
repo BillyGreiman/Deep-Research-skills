@@ -19,6 +19,7 @@ A structured research workflow skill for Claude Code, supporting two-phase resea
 | `/research/add-items` | Add more items to existing outline |
 | `/research/add-fields` | Add more fields to existing outline |
 | `/research/deep` | Deep research each item with parallel agents |
+| `/research/report` | Generate markdown report from JSON results |
 
 ## Installation
 
@@ -86,6 +87,14 @@ basic_info:
 
 ### Research Result (JSON)
 Each item outputs a structured JSON file with all defined fields.
+
+### Phase 3: Generate Report
+```
+/research/report
+```
+- Generates Python script to convert JSON to markdown
+- Creates report with table of contents and anchor links
+- Skips uncertain fields automatically
 
 ## References
 

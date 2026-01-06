@@ -35,40 +35,52 @@ cp agents/web-search-agent.md ~/.claude/agents/
 | `run /research/deep` | 使用并行agents对每个item进行深度调研 |
 | `run /research/report` | 从JSON结果生成markdown报告 |
 
-## 工作流
+## 工作流 & 示例
+
+> 示例：调研 "AI Agent Demo 2025"
 
 ### 阶段1：生成Outline
 ```
-run /research <topic>
+run /research AI Agent Demo 2025
 ```
-- 模型知识生成初始items和字段框架
-- 网络搜索补充最新items
-- 用户确认并调整
-- 输出：`outline.yaml`（items + 配置）+ `fields.yaml`（字段定义）
+**输出：** `ai-agent-demo/outline.yaml`
+```yaml
+topic: "AI Agent Demo & 测评 (2025.9-2025.12)"
+items:
+  - name: "ChatGPT Agent"
+    category: "浏览器Agent"
+    brief: "OpenAI统一Agent，2025年7月发布"
+  - name: "Claude Computer Use"
+    category: "桌面Agent"
+    brief: "Anthropic桌面操控Agent"
+  # ... 另外15个items
+```
 
 ### 阶段2：深度调研
 ```
 run /research/deep
 ```
-- 并行agents调研每个item（batch_size可配置）
-- 每个agent读取fields.yaml并输出结构化JSON
-- 支持断点续传
-- 输出：`results/*.json`
-
-### 可选：扩展Outline
-```
-run /research/add-items    # 通过用户输入或网络搜索添加调研对象
-run /research/add-fields   # 添加字段定义
+**输出：** `ai-agent-demo/results/ChatGPT_Agent.json`
+```json
+{
+  "basic_info": {
+    "name": "ChatGPT Agent",
+    "company": "OpenAI",
+    "release_date": "2025-07-17",
+    "pricing": "Pro $200/月, Plus $20/月"
+  },
+  "tech_specs": {
+    "underlying_model": "GPT-5系列",
+    "agent_type": "统一型自主Agent"
+  }
+}
 ```
 
 ### 阶段3：生成报告
 ```
 run /research/report
 ```
-- 生成Python脚本将JSON转换为markdown
-- 用户选择目录中显示的摘要字段
-- 自动跳过不确定值
-- 输出：`report.md`
+**输出：** `ai-agent-demo/report.md` - 带目录和所有item的Markdown报告
 
 ## 参考文献
 

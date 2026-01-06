@@ -35,40 +35,52 @@ cp agents/web-search-agent.md ~/.claude/agents/
 | `run /research/deep` | Deep research each item with parallel agents |
 | `run /research/report` | Generate markdown report from JSON results |
 
-## Workflow
+## Workflow & Example
+
+> Example: Researching "AI Agent Demo 2025"
 
 ### Phase 1: Generate Outline
 ```
-run /research <topic>
+run /research AI Agent Demo 2025
 ```
-- Model knowledge generates initial items and field framework
-- Web search supplements latest items
-- User confirms and adjusts
-- Outputs: `outline.yaml` (items + config) + `fields.yaml` (field definitions)
+**Output:** `ai-agent-demo/outline.yaml`
+```yaml
+topic: "AI Agent Demo & Review (2025.9-2025.12)"
+items:
+  - name: "ChatGPT Agent"
+    category: "Browser Agent"
+    brief: "OpenAI unified Agent, released July 2025"
+  - name: "Claude Computer Use"
+    category: "Desktop Agent"
+    brief: "Anthropic desktop control Agent"
+  # ... 15 more items
+```
 
 ### Phase 2: Deep Research
 ```
 run /research/deep
 ```
-- Parallel agents research each item (batch_size configurable)
-- Each agent reads fields.yaml and outputs structured JSON
-- Supports checkpoint resume
-- Outputs: `results/*.json`
-
-### Optional: Expand Outline
-```
-run /research/add-items    # Add research targets via user input or web search
-run /research/add-fields   # Add field definitions
+**Output:** `ai-agent-demo/results/ChatGPT_Agent.json`
+```json
+{
+  "basic_info": {
+    "name": "ChatGPT Agent",
+    "company": "OpenAI",
+    "release_date": "2025-07-17",
+    "pricing": "Pro $200/mo, Plus $20/mo"
+  },
+  "tech_specs": {
+    "underlying_model": "GPT-5 series",
+    "agent_type": "Unified autonomous Agent"
+  }
+}
 ```
 
 ### Phase 3: Generate Report
 ```
 run /research/report
 ```
-- Generates Python script to convert JSON to markdown
-- User selects summary fields for TOC
-- Skips uncertain values automatically
-- Outputs: `report.md`
+**Output:** `ai-agent-demo/report.md` - Markdown report with TOC and all items
 
 ## References
 

@@ -55,6 +55,13 @@ pip install pyyaml
 
 **你会得到**：17个待调研的AI Agent清单（ChatGPT Agent、Claude Computer Use、Cursor等）+ 每个要收集哪些信息
 
+### （可选）不满意？继续添加
+```
+/research-add-items
+/research-add-fields
+```
+💡 **发生了什么**：补充更多调研对象或字段定义
+
 ### 阶段2：深度调研
 ```
 /research-deep

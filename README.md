@@ -55,6 +55,13 @@ pip install pyyaml
 
 **You get**: A list of 17 AI Agents to research (ChatGPT Agent, Claude Computer Use, Cursor, etc.) + what info to collect for each
 
+### (Optional) Not satisfied? Add more
+```
+/research-add-items
+/research-add-fields
+```
+💡 **What happens**: Add more research items or field definitions
+
 ### Phase 2: Deep Research
 ```
 /research-deep

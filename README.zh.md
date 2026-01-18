@@ -8,6 +8,8 @@
 
 Claude Code 的结构化调研工作流技能，支持两阶段调研：outline生成（可扩展）和深度调查。人在回路设计确保每个阶段的精确控制。
 
+![Deep Research Skills 工作流](workflow.png)
+
 ## 使用场景
 
 - **学术研究**：论文综述、benchmark评测、文献分析

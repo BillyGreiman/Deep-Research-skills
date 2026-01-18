@@ -8,6 +8,8 @@
 
 A structured research workflow skill for Claude Code, supporting two-phase research: outline generation (extensible) and deep investigation. Human-in-the-loop design ensures precise control at every stage.
 
+![Deep Research Skills Workflow](workflow.png)
+
 ## Use Cases
 
 - **Academic Research**: Paper surveys, benchmark reviews, literature analysis

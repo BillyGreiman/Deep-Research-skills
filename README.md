@@ -6,7 +6,11 @@
 
 > Inspired by [RhinoInsight: Improving Deep Research through Control Mechanisms for Model Behavior and Context](https://arxiv.org/abs/2511.18743)
 
-A structured research workflow skill for Claude Code, OpenCode, and Codex, supporting two-phase research: outline generation (extensible) and deep investigation. Human-in-the-loop design ensures precise control at every stage.
+A structured, human-in-the-loop research workflow skill for Claude Code, OpenCode, and Codex. It helps turn broad research questions into clear, actionable plans and organized reports.
+
+The workflow has two main stages. First, it generates a customizable research outline with specific topics to investigate and fields to collect. You can review and refine the outline—adding or removing research items and fields—before the investigation begins. Next, the skill researches each item using web search and, where supported, parallel agents, then organizes the findings into structured data. You can turn those results into a polished Markdown report with a table of contents.
+
+By keeping you in control of the outline and research scope, the workflow makes complex investigations easier to manage and adapt. It is suitable for academic literature reviews, technical evaluations, market analysis, and due diligence, and supports both English and Chinese workflows.
 
 ![Deep Research Skills Workflow](workflow.png)
 
